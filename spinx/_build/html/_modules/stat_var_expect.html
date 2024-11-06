@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>stat_var_expect &mdash; PyUQ  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PyUQ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test_file.html">Example</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../capk_v2.html">capk_v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cross_validation.html">cross validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cv.html">cv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_4D.html">anova in 4 dim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_adaptive_creteria.html">anova adaptive creteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_decomposition.html">anova decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_terms.html">anova terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel.html">kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../krig_for_anova.html">krigging for anova</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../krigging.html">krigging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pod.html">Proper Orthogonal Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sobol.html">sobol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample.html">Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loo.html">Leave one out</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sobol_indices_3.html">sobol indices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reinforce.html">reinforce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stat_var_expect.html">stat: varaince and expectation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyUQ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">stat_var_expect</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for stat_var_expect</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Tue Oct 23 15:16:17 2018</span>
+
+<span class="sd">@author: pmehta</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">anova_decomposition</span> <span class="k">as</span> <span class="nn">an</span>
+<span class="kn">import</span> <span class="nn">anova_terms</span> <span class="k">as</span> <span class="nn">ant</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+
+
+<div class="viewcode-block" id="variance">
+<a class="viewcode-back" href="../stat_var_expect.html#stat_var_expect.variance">[docs]</a>
+<span class="k">class</span> <span class="nc">variance</span><span class="p">:</span>
+    
+    
+    
+    
+<div class="viewcode-block" id="variance.total">
+<a class="viewcode-back" href="../stat_var_expect.html#stat_var_expect.variance.total">[docs]</a>
+    <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="n">f0_data</span><span class="p">,</span> <span class="n">data_order1</span><span class="p">,</span> <span class="n">data_order2</span><span class="p">,</span> <span class="n">trunc_order</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">data_order1</span><span class="o">.</span><span class="n">shape</span>
+        
+        <span class="n">grid_points</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+          
+        <span class="c1">#Calling functianl value at the anchored pooint</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="n">ant</span><span class="o">.</span><span class="n">cANOVA_terms</span><span class="o">.</span><span class="n">compute_f0</span><span class="p">(</span><span class="n">f0_data</span><span class="p">)</span>
+        
+          
+        <span class="c1">#Call ANOVA decomposition</span>
+        <span class="n">f_anova</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">an</span><span class="o">.</span><span class="n">cANOVA_decomposition</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">f0_data</span><span class="p">,</span> <span class="n">data_order1</span><span class="p">,</span> <span class="n">data_order2</span><span class="p">,</span> <span class="n">trunc_order</span><span class="p">)</span>
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">f_anova</span><span class="o">.</span><span class="n">shape</span>
+        
+        <span class="n">net_anova_terms</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="c1">#compute sum of total variance </span>
+        
+        <span class="n">var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_points</span><span class="p">))</span>  
+        
+                    
+        <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_points</span><span class="p">):</span>
+            
+            <span class="n">sumer</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net_anova_terms</span><span class="p">):</span>
+        
+                <span class="n">sumer</span> <span class="o">=</span> <span class="n">sumer</span> <span class="o">+</span> <span class="p">(</span><span class="n">f_anova</span><span class="p">[</span><span class="n">z</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">f0</span><span class="p">[</span><span class="n">z</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+                
+            <span class="n">var</span><span class="p">[</span><span class="n">z</span><span class="p">]</span> <span class="o">=</span> <span class="n">sumer</span> <span class="o">/</span> <span class="n">net_anova_terms</span>
+        
+        <span class="k">return</span> <span class="n">var</span></div>
+
+        
+    
+    
+    
+    
+    
+<div class="viewcode-block" id="variance.order1_terms">
+<a class="viewcode-back" href="../stat_var_expect.html#stat_var_expect.variance.order1_terms">[docs]</a>
+    <span class="k">def</span> <span class="nf">order1_terms</span><span class="p">(</span><span class="n">f0_data</span><span class="p">,</span> <span class="n">data_order1</span><span class="p">):</span>
+        
+        
+        <span class="c1">#get order 1 terms and neccessary data</span>
+        
+        <span class="n">f1</span><span class="p">,</span> <span class="n">grid_points</span><span class="p">,</span> <span class="n">computational_points_order1</span><span class="p">,</span> <span class="n">dim_max</span> <span class="o">=</span> <span class="n">ant</span><span class="o">.</span><span class="n">cANOVA_terms</span><span class="o">.</span><span class="n">order_1_terms</span><span class="p">(</span><span class="n">f0_data</span><span class="p">,</span> <span class="n">data_order1</span><span class="p">)</span>
+         
+        <span class="c1">#Compute order 1 variance</span>
+        
+        <span class="n">var_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_points</span><span class="p">,</span> <span class="n">dim_max</span><span class="p">))</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dim_max</span><span class="p">):</span>
+                        
+            <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_points</span><span class="p">):</span>
+                
+                <span class="n">sumer</span> <span class="o">=</span> <span class="mi">0</span>
+                
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">computational_points_order1</span><span class="p">):</span>
+                
+                    <span class="n">sumer</span> <span class="o">=</span> <span class="n">sumer</span> <span class="o">+</span> <span class="p">(</span><span class="n">f1</span><span class="p">[</span><span class="n">z</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>                    
+                    
+                <span class="n">var_i</span><span class="p">[</span><span class="n">z</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sumer</span> <span class="o">/</span> <span class="n">computational_points_order1</span>
+                
+                            
+        <span class="c1"># computing total order 1 variance</span>
+        
+        <span class="n">net_var_order1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_points</span><span class="p">))</span>
+        
+        <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_points</span><span class="p">):</span>
+                
+            <span class="n">sumer1</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dim_max</span><span class="p">):</span>
+                
+                <span class="n">sumer1</span> <span class="o">=</span> <span class="n">sumer1</span> <span class="o">+</span> <span class="n">var_i</span><span class="p">[</span><span class="n">z</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+            
+            <span class="n">net_var_order1</span><span class="p">[</span><span class="n">z</span><span class="p">]</span> <span class="o">=</span> <span class="n">sumer1</span> <span class="o">/</span> <span class="n">dim_max</span>
+        
+        <span class="k">return</span> <span class="n">var_i</span><span class="p">,</span> <span class="n">net_var_order1</span></div>
+
+    
+    
+    
+    
+  
+    
+    
+<div class="viewcode-block" id="variance.order2_terms">
+<a class="viewcode-back" href="../stat_var_expect.html#stat_var_expect.variance.order2_terms">[docs]</a>
+    <span class="k">def</span> <span class="nf">order2_terms</span><span class="p">(</span><span class="n">f0_data</span><span class="p">,</span> <span class="n">data_order1</span><span class="p">,</span> <span class="n">data_order2</span><span class="p">):</span>
+        
+        
+        <span class="c1">#get order 2 terms and necessary data</span>
+        
+        <span class="n">f2</span><span class="p">,</span> <span class="n">computational_points_order2</span><span class="p">,</span> <span class="n">net_order2_terms</span><span class="p">,</span> <span class="n">order2_index</span> <span class="o">=</span> <span class="n">ant</span><span class="o">.</span><span class="n">cANOVA_terms</span><span class="o">.</span><span class="n">order_2_terms</span><span class="p">(</span><span class="n">f0_data</span><span class="p">,</span> <span class="n">data_order1</span><span class="p">,</span> <span class="n">data_order2</span><span class="p">)</span>
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">data_order1</span><span class="o">.</span><span class="n">shape</span>
+        
+        
+        <span class="n">grid_points</span><span class="p">,</span> <span class="n">computational_points_order1</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="c1">#compute variance order 2 terms</span>
+        
+        <span class="n">var_ij</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_points</span><span class="p">,</span> <span class="n">net_order2_terms</span><span class="p">))</span>
+        
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net_order2_terms</span><span class="p">):</span>
+            
+            <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_points</span><span class="p">):</span>
+                
+                <span class="n">sumer</span> <span class="o">=</span> <span class="mi">0</span>
+                
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">computational_points_order1</span><span class="p">):</span>
+                    
+                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">computational_points_order1</span><span class="p">):</span>
+                        
+                        <span class="n">sumer</span> <span class="o">=</span> <span class="n">sumer</span> <span class="o">+</span> <span class="p">(</span><span class="n">f2</span><span class="p">[</span><span class="n">z</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                        
+                        
+                <span class="n">var_ij</span><span class="p">[</span><span class="n">z</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sumer</span> <span class="o">/</span> <span class="n">computational_points_order2</span>
+                
+                
+        <span class="k">return</span> <span class="n">var_ij</span></div>
+</div>
+
+    
+    
+    
+    
+    
+  
+
+
+
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2024, Pavan Pranjivan Mehta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

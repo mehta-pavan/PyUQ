@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sin_test &mdash; PyUQ  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            PyUQ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test_file.html">Example</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../capk_v2.html">capk_v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cross_validation.html">cross validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cv.html">cv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_4D.html">anova in 4 dim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_adaptive_creteria.html">anova adaptive creteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_decomposition.html">anova decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anova_terms.html">anova terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kernel.html">kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../krig_for_anova.html">krigging for anova</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../krigging.html">krigging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pod.html">Proper Orthogonal Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sobol.html">sobol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sample.html">Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../loo.html">Leave one out</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sobol_indices_3.html">sobol indices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reinforce.html">reinforce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../stat_var_expect.html">stat: varaince and expectation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PyUQ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">sin_test</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for sin_test</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Wed Dec  5 10:53:58 2018</span>
+
+<span class="sd">@author: pmehta</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<div class="viewcode-block" id="sin_test">
+<a class="viewcode-back" href="../sin_test.html#sin_test.sin_test">[docs]</a>
+<span class="k">class</span> <span class="nc">sin_test</span><span class="p">:</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">    This scipt demonstartes how data is to be genereated and fed into cAPK algorithm for a 4 dimensional case</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    
+    
+    
+<div class="viewcode-block" id="sin_test.test">
+<a class="viewcode-back" href="../sin_test.html#sin_test.sin_test.test">[docs]</a>
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">T0</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="n">A1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">A2</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">A3</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">A4</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">net_quad_point</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">A1_range</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>  <span class="n">A2_range</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">A3_range</span> <span class="o">=</span> <span class="mi">10</span> <span class="p">,</span>  <span class="n">A4_range</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">grid_poins</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+<span class="w">       </span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        This method genereates the neceasry data for cAPK</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="n">grid_poins</span><span class="p">,</span> <span class="n">endpoint</span> <span class="o">=</span> <span class="kc">True</span> <span class="p">)</span>
+        
+        <span class="n">A1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">A1</span> <span class="o">-</span> <span class="n">A1_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">A1</span> <span class="o">+</span> <span class="n">A1_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="n">net_quad_point</span><span class="p">,</span> <span class="n">endpoint</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">A2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">A2</span> <span class="o">-</span> <span class="n">A2_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">A2</span> <span class="o">+</span> <span class="n">A2_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="n">net_quad_point</span><span class="p">,</span> <span class="n">endpoint</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">A3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">A3</span> <span class="o">-</span> <span class="n">A3_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">A3</span> <span class="o">+</span> <span class="n">A3_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="n">net_quad_point</span><span class="p">,</span> <span class="n">endpoint</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">A4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">A4</span> <span class="o">-</span> <span class="n">A4_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">A4</span> <span class="o">+</span> <span class="n">A4_range</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="n">net_quad_point</span><span class="p">,</span> <span class="n">endpoint</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">f0</span> <span class="o">=</span> <span class="n">sin_test</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="p">((</span><span class="n">A1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">A1</span><span class="p">[</span><span class="n">net_quad_point</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="n">A2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">A2</span><span class="p">[</span><span class="n">net_quad_point</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="n">A3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">A3</span><span class="p">[</span><span class="n">net_quad_point</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="p">((</span><span class="n">A4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">A4</span><span class="p">[</span><span class="n">net_quad_point</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+        
+        
+    
+    
+        <span class="n">Quad_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">,</span> <span class="n">A3</span><span class="p">,</span> <span class="n">A4</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">f1</span><span class="p">,</span> <span class="n">order1_index</span> <span class="o">=</span> <span class="n">sin_test</span><span class="o">.</span><span class="n">order1_terms</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Quad_points</span><span class="p">)</span>
+        
+        <span class="n">f2</span><span class="p">,</span> <span class="n">Quad_points_order2</span><span class="p">,</span> <span class="n">order2_index</span> <span class="o">=</span> <span class="n">sin_test</span><span class="o">.</span><span class="n">order2_terms</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Quad_points</span><span class="p">)</span>
+        
+        <span class="n">Quad_points_validation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">A1</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A1</span><span class="p">[</span><span class="n">net_quad_point</span> <span class="o">-</span><span class="mi">1</span><span class="p">])),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">A2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A2</span><span class="p">[</span><span class="n">net_quad_point</span> <span class="o">-</span><span class="mi">1</span><span class="p">])),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">A3</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A3</span><span class="p">[</span><span class="n">net_quad_point</span> <span class="o">-</span><span class="mi">1</span><span class="p">])),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">A4</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">A4</span><span class="p">[</span><span class="n">net_quad_point</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">data_validation</span> <span class="o">=</span> <span class="n">sin_test</span><span class="o">.</span><span class="n">data_valida</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Quad_points_validation</span><span class="p">,</span> <span class="n">dim_max</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">f0</span><span class="p">,</span> <span class="n">Quad_points</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">order1_index</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">Quad_points_order2</span><span class="p">,</span> <span class="n">order2_index</span><span class="p">,</span> <span class="n">data_validation</span><span class="p">,</span> <span class="n">Quad_points_validation</span></div>
+
+    
+    
+    
+<div class="viewcode-block" id="sin_test.func">
+<a class="viewcode-back" href="../sin_test.html#sin_test.sin_test.func">[docs]</a>
+    <span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">,</span> <span class="n">A3</span><span class="p">,</span> <span class="n">A4</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Test function</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        
+        <span class="n">y</span> <span class="o">=</span> <span class="n">T0</span> <span class="o">+</span> <span class="n">A1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">A2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">A3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">A4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+       
+        <span class="k">return</span> <span class="n">y</span></div>
+
+   
+    
+<div class="viewcode-block" id="sin_test.data_valida">
+<a class="viewcode-back" href="../sin_test.html#sin_test.sin_test.data_valida">[docs]</a>
+    <span class="k">def</span> <span class="nf">data_valida</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Quad_points</span><span class="p">,</span> <span class="n">dim_max</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generating validation data set</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">grid_points</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="n">data_validation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_points</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+        
+        <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    
+                        <span class="n">data_validation</span><span class="p">[:,</span><span class="n">counter</span><span class="p">]</span> <span class="o">=</span> <span class="n">sin_test</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">l</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+                        <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                        
+        <span class="k">return</span> <span class="n">data_validation</span></div>
+
+        
+   
+<div class="viewcode-block" id="sin_test.order1_terms">
+<a class="viewcode-back" href="../sin_test.html#sin_test.sin_test.order1_terms">[docs]</a>
+    <span class="k">def</span> <span class="nf">order1_terms</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Quad_points</span><span class="p">,</span> <span class="n">dim_max</span> <span class="o">=</span> <span class="mi">4</span><span class="p">):</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Generating order 1 terms</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">grid_points</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">net_quad_points</span><span class="p">,</span> <span class="n">dim_max</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        
+        <span class="n">f1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_points</span><span class="p">,</span> <span class="n">net_quad_points</span><span class="p">,</span> <span class="n">dim_max</span><span class="p">))</span>
+        
+        <span class="n">order1_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">net_quad_points</span><span class="p">,</span> <span class="n">dim_max</span><span class="p">))</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dim_max</span><span class="p">):</span>
+            
+                       
+            
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net_quad_points</span><span class="p">):</span>
+                
+                
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">A1</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+                    <span class="n">A2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A4</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                
+                <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">A2</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+                    <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A4</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    
+                <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="n">A3</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+                    <span class="n">A2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A4</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    
+                <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">A4</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span>
+                    <span class="n">A2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                    <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                                
+            
+                <span class="n">f1</span><span class="p">[:,</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sin_test</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">,</span> <span class="n">A3</span><span class="p">,</span> <span class="n">A4</span><span class="p">)</span>
+                <span class="n">order1_index</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                
+                
+                
+        <span class="k">return</span> <span class="n">f1</span><span class="p">,</span> <span class="n">order1_index</span></div>
+
+    
+    
+<div class="viewcode-block" id="sin_test.order2_terms">
+<a class="viewcode-back" href="../sin_test.html#sin_test.sin_test.order2_terms">[docs]</a>
+    <span class="k">def</span> <span class="nf">order2_terms</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">Quad_points</span><span class="p">,</span> <span class="n">net_order2_terms</span> <span class="o">=</span> <span class="mi">6</span><span class="p">):</span>
+<span class="w">        </span>
+<span class="w">        </span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">        Generating order 2 data</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
+        
+        
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">grid_points</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">net_quad_points_per_dim</span>  <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        
+        <span class="n">f2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_points</span><span class="p">,</span> <span class="n">net_quad_points_per_dim</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">net_order2_terms</span><span class="p">))</span>
+        
+        <span class="n">order2_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">net_quad_points_per_dim</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">net_order2_terms</span><span class="p">))</span>
+        
+        <span class="n">Quad_points_order2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">net_quad_points_per_dim</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">net_order2_terms</span><span class="p">))</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net_order2_terms</span><span class="p">):</span>
+            
+            <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net_quad_points_per_dim</span><span class="p">):</span>
+                
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">net_quad_points_per_dim</span><span class="p">):</span>
+                    
+                    
+                      
+                    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">A1</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">A2</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="n">A3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A4</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                       
+                        <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">Quad_points_order2</span><span class="p">[:,:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+                       
+                    
+                    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                        <span class="n">A1</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">A2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A3</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+                        <span class="n">A4</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        
+                       
+                        <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">Quad_points_order2</span><span class="p">[:,:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+                        
+                    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                       
+                        <span class="n">A1</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">A2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A4</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+                       
+                        
+                       
+                        <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">Quad_points_order2</span><span class="p">[:,:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+                        
+                    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                        <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A2</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="n">A3</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+                        <span class="n">A4</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                       
+                        
+                        <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">Quad_points_order2</span><span class="p">[:,:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+                     
+                        
+                    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                        <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A2</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="n">A3</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A4</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+                       
+                       
+                        <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">Quad_points_order2</span><span class="p">[:,:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+                        
+                    <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+                        <span class="n">A1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Quad_points</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">net_quad_points_per_dim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+                        <span class="n">A3</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+                        <span class="n">A4</span> <span class="o">=</span> <span class="n">Quad_points</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+                        
+                       
+                        <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                            <span class="n">Quad_points_order2</span><span class="p">[:,:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">((</span><span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">Quad_points</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+                        
+                        
+                    
+                    <span class="n">f2</span><span class="p">[:,</span><span class="n">counter</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">sin_test</span><span class="o">.</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">T0</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">,</span> <span class="n">A3</span><span class="p">,</span> <span class="n">A4</span><span class="p">)</span>
+                    <span class="n">order2_index</span><span class="p">[</span><span class="n">counter</span><span class="p">,:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">),</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">int</span><span class="p">)</span>
+                    
+                    <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+                    
+        
+        <span class="k">return</span> <span class="n">f2</span><span class="p">,</span> <span class="n">Quad_points_order2</span><span class="p">,</span> <span class="n">order2_index</span></div>
+</div>
+
+        
+        
+    
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2024, Pavan Pranjivan Mehta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
