@@ -4,9 +4,9 @@
 
 ### Introduction
 
-PyUQ is a python library for uncertainty quantifcation and data assimilation, combining the fretures of c-ANOVA, POD and Krigging. 
+PyUQ is a python library for uncertainty quantifcation and data assimilation, combining the features of c-ANOVA, POD and Krigging. 
 
-Sensitivty analysis is perfromed using Sobol indices, and sampling is provided Sobal sequence
+Sensitivty analysis is performed using Sobol indices, and sampling via Sobal sequence
 
 This is library was developed during the author's time at M2P2 Lab, France under supervision of Prof. Pierre Sagaut.  
 
@@ -31,9 +31,16 @@ This is library was developed during the author's time at M2P2 Lab, France under
 Please read the PDF provided within the directory `capk`
 
 ```
-
+https://github.com/mehta-pavan/PyUQ/tree/master/capk
 ```
 
+### Tutorial
+
+Please find the tutorial file
+
+```
+https://github.com/mehta-pavan/PyUQ/tree/master/tutorial
+```
 
 ### License
 **PyUQ** is freely available under the GNU LESSER GENERAL PUBLIC LICENSE Version 2.1.
