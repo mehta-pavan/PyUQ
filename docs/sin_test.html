@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sin_test &mdash; PyUQ  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyUQ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorial:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="test_file.html">Example</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="capk_v2.html">capk_v2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cross_validation.html">cross validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cv.html">cv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anova_4D.html">anova in 4 dim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anova_adaptive_creteria.html">anova adaptive creteria</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anova_decomposition.html">anova decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anova_terms.html">anova terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kernel.html">kernel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="krig_for_anova.html">krigging for anova</a></li>
+<li class="toctree-l1"><a class="reference internal" href="krigging.html">krigging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pod.html">Proper Orthogonal Decomposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sobol.html">sobol</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample.html">Sampling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loo.html">Leave one out</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sobol_indices_3.html">sobol indices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforce.html">reinforce</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stat_var_expect.html">stat: varaince and expectation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyUQ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">sin_test</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sin_test.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-sin_test">
+<span id="sin-test"></span><h1>sin_test<a class="headerlink" href="#module-sin_test" title="Link to this heading"></a></h1>
+<p>Created on Wed Dec  5 10:53:58 2018</p>
+<p>&#64;author: pmehta</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="sin_test.sin_test">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sin_test.</span></span><span class="sig-name descname"><span class="pre">sin_test</span></span><a class="reference internal" href="_modules/sin_test.html#sin_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sin_test.sin_test" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This scipt demonstartes how data is to be genereated and fed into cAPK algorithm for a 4 dimensional case</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sin_test.sin_test.test">
+<span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_quad_point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A1_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A2_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A3_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A4_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_poins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sin_test.html#sin_test.test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sin_test.sin_test.test" title="Link to this definition"></a></dt>
+<dd><p>This method genereates the neceasry data for cAPK</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sin_test.sin_test.func">
+<span class="sig-name descname"><span class="pre">func</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sin_test.html#sin_test.func"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sin_test.sin_test.func" title="Link to this definition"></a></dt>
+<dd><p>Test function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sin_test.sin_test.data_valida">
+<span class="sig-name descname"><span class="pre">data_valida</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quad_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sin_test.html#sin_test.data_valida"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sin_test.sin_test.data_valida" title="Link to this definition"></a></dt>
+<dd><p>Generating validation data set</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sin_test.sin_test.order1_terms">
+<span class="sig-name descname"><span class="pre">order1_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quad_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sin_test.html#sin_test.order1_terms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sin_test.sin_test.order1_terms" title="Link to this definition"></a></dt>
+<dd><p>Generating order 1 terms</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sin_test.sin_test.order2_terms">
+<span class="sig-name descname"><span class="pre">order2_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quad_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">net_order2_terms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sin_test.html#sin_test.order2_terms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sin_test.sin_test.order2_terms" title="Link to this definition"></a></dt>
+<dd><p>Generating order 2 data</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2018-2024, Pavan Pranjivan Mehta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
