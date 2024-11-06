@@ -33,6 +33,11 @@ Please read the PDF provided within the directory `capk`
 ```
 https://github.com/mehta-pavan/PyUQ/tree/master/capk
 ```
+API reference
+
+```
+https://mehta-pavan.github.io/PyUQ/
+```
 
 ### Tutorial
 
