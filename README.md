@@ -4,7 +4,7 @@
 ### Software architecture
 
 <p align="center">
-  <a href="https://mehta-pavan.github.io/PyUQ/" target="_blank" >
+  <a href="https://github.com/mehta-pavan/PyUQ/blob/master/capk/capk_software_arch.png" target="_blank" >
     <img alt="PyUQ : Software architecture" src="./capk/capk_software_arch.png" width="330" />
   </a>
 </p>
