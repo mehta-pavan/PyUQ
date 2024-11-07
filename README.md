@@ -1,6 +1,13 @@
 # PyUQ : Uncertainty Quantification and Data Assimilation - A Python library
 
 
+### Software architecture
+
+<p align="center">
+  <a href="https://mehta-pavan.github.io/PyUQ/" target="_blank" >
+    <img alt="PyUQ : Software architecture" src="./capk/capk_software_arch.png" width="330" />
+  </a>
+</p>
 
 ### Introduction
 
@@ -17,14 +24,6 @@ This is library was developed during the author's time at M2P2 Lab, France under
 * Proper Orthogonal Basis (POD)
 * Sobol Indices
 * Sampling via Sobal sequence
-
-### Software architecture
-
-<p align="center">
-  <a href="https://mehta-pavan.github.io/PyUQ/" target="_blank" >
-    <img alt="PyUQ : Software architecture" src="./capk/capk_software_arch.png" width="330" />
-  </a>
-</p>
 
 
 
