@@ -34,22 +34,18 @@ Please read the PDF provided within the directory `capk`
 https://github.com/mehta-pavan/PyUQ/tree/master/capk
 
 
+Tutorial
+========
 
+Please find the tutorials here :
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Tutorial:
-   
-   test_file
-
+https://github.com/mehta-pavan/PyUQ/tree/master/tutorial
 
 
 .. toctree::
    :maxdepth: 1
    :caption: API Reference:
    
-   capk_v2
-   cross_validation
    cv
    anova_4D
    anova_adaptive_creteria
@@ -65,9 +61,11 @@ https://github.com/mehta-pavan/PyUQ/tree/master/capk
    sobol_indices_3
    reinforce
    stat_var_expect
+   capk_v2
+   cross_validation
    
    
-   
+
    
 
 Indices and tables
