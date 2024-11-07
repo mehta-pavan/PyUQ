@@ -22,7 +22,7 @@ This is library was developed during the author's time at M2P2 Lab, France under
 
 <p align="center">
   <a href="https://mehta-pavan.github.io/PyUQ/" target="_blank" >
-    <img alt="PyUQ : Software architecture" src="./capk/capk_software_arch.png" width="200" />
+    <img alt="PyUQ : Software architecture" src="./capk/capk_software_arch.png" width="330" />
   </a>
 </p>
 
