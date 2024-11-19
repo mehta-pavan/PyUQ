@@ -11,6 +11,8 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -26,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> PyUQ
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyUQ
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -51,13 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="sample.html">Sampling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="loo.html">Leave one out</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sobol_indices_3.html">sobol indices</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">reinforce</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#reinforce.reinforce"><code class="docutils literal notranslate"><span class="pre">reinforce</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#reinforce.reinforce.residual_4D"><code class="docutils literal notranslate"><span class="pre">reinforce.residual_4D()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">reinforce</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stat_var_expect.html">stat: varaince and expectation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="capk_v2.html">capk_v2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cross_validation.html">cross validation</a></li>
@@ -76,7 +76,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">reinforce</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/reinforce.rst.txt" rel="nofollow"> View page source</a>
@@ -87,22 +87,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-reinforce">
-<span id="reinforce"></span><h1>reinforce<a class="headerlink" href="#module-reinforce" title="Link to this heading"></a></h1>
-<p>&#64;author: pmehta</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="reinforce.reinforce">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">reinforce.</span></span><span class="sig-name descname"><span class="pre">reinforce</span></span><a class="reference internal" href="_modules/reinforce.html#reinforce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reinforce.reinforce" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This class provides methods to correct the c_ANOVA results</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="reinforce.reinforce.residual_4D">
-<span class="sig-name descname"><span class="pre">residual_4D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U_order1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U_order2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_cfd_corners</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f_anova_corners</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Quad_points_validation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_intial</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trunc_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_order2_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discrestisation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_uniform_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disceretistation_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'poly_cubic_spline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/reinforce.html#reinforce.residual_4D"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#reinforce.reinforce.residual_4D" title="Link to this definition"></a></dt>
-<dd><p>This method coputes the residual values in 4 Dimensions</p>
-</dd></dl>
-
-</dd></dl>
-
+  <section id="reinforce">
+<h1>reinforce<a class="headerlink" href="#reinforce" title="Link to this heading"></a></h1>
 </section>
 
 

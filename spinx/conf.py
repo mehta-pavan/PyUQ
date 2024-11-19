@@ -19,7 +19,7 @@ author = 'Pavan Pranjivan Mehta'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ['sphinx.ext.autodoc', 
-	'sphinx.ext.viewcode',
+#	'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosummary']
 

@@ -11,6 +11,8 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -26,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> PyUQ
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyUQ
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -44,14 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="anova_decomposition.html">anova decomposition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anova_terms.html">anova terms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kernel.html">kernel</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">krigging for anova</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#krig_for_anova.built_data"><code class="docutils literal notranslate"><span class="pre">built_data</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#krig_for_anova.built_data.generating_order1_terms"><code class="docutils literal notranslate"><span class="pre">built_data.generating_order1_terms()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#krig_for_anova.built_data.generating_order2_terms"><code class="docutils literal notranslate"><span class="pre">built_data.generating_order2_terms()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">krigging for anova</a></li>
 <li class="toctree-l1"><a class="reference internal" href="krigging.html">krigging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pod.html">Proper Orthogonal Decomposition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sobol.html">sobol</a></li>
@@ -77,7 +76,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">krigging for anova</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/krig_for_anova.rst.txt" rel="nofollow"> View page source</a>
@@ -88,27 +87,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-krig_for_anova">
-<span id="krigging-for-anova"></span><h1>krigging for anova<a class="headerlink" href="#module-krig_for_anova" title="Link to this heading"></a></h1>
-<p>Author: Pavan Mehta
-Email: <a class="reference external" href="mailto:mehtapavanp&#37;&#52;&#48;gmail&#46;com">mehtapavanp<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
-<dl class="py class">
-<dt class="sig sig-object py" id="krig_for_anova.built_data">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">krig_for_anova.</span></span><span class="sig-name descname"><span class="pre">built_data</span></span><a class="reference internal" href="_modules/krig_for_anova.html#built_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#krig_for_anova.built_data" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This file performs 1D and 2D krigging with bulding the matrix as per required by the ANOVA files</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="krig_for_anova.built_data.generating_order1_terms">
-<span class="sig-name descname"><span class="pre">generating_order1_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Quad_points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discrestisation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'poly_cubic_spline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disceretistation_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_unifrom_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/krig_for_anova.html#built_data.generating_order1_terms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#krig_for_anova.built_data.generating_order1_terms" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="krig_for_anova.built_data.generating_order2_terms">
-<span class="sig-name descname"><span class="pre">generating_order2_terms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Quad_points_order2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_2_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discrestisation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'poly_cubic_spline'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disceretistation_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_uniform_sampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/krig_for_anova.html#built_data.generating_order2_terms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#krig_for_anova.built_data.generating_order2_terms" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+  <section id="krigging-for-anova">
+<h1>krigging for anova<a class="headerlink" href="#krigging-for-anova" title="Link to this heading"></a></h1>
 </section>
 
 

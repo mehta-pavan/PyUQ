@@ -11,6 +11,8 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -26,11 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> PyUQ
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyUQ
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -82,7 +88,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">kernel</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/kernel.rst.txt" rel="nofollow"> View page source</a>
@@ -99,12 +105,12 @@
 <p>&#64;author: pmehta</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="kernel.kernel">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kernel.</span></span><span class="sig-name descname"><span class="pre">kernel</span></span><a class="reference internal" href="_modules/kernel.html#kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kernel.kernel" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kernel.</span></span><span class="sig-name descname"><span class="pre">kernel</span></span><a class="headerlink" href="#kernel.kernel" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class is reserved for definig kernels or co-variance fucntions for Krigging or otherwise”</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="kernel.kernel.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">discrestisation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kernel.html#kernel.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kernel.kernel.fit" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">discrestisation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kernel.kernel.fit" title="Link to this definition"></a></dt>
 <dd><p>This functions provides the Co-vaiance matrix</p>
 <dl>
 <dt>Important Variable:</dt><dd><p>Consider the function Y = F(X)
@@ -122,13 +128,13 @@ K2: Kernel or Co-variance matrix of (discretitation, discretitation)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kernel.kernel.sq_exponential">
-<span class="sig-name descname"><span class="pre">sq_exponential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kernel.html#kernel.sq_exponential"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kernel.kernel.sq_exponential" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">sq_exponential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kernel.kernel.sq_exponential" title="Link to this definition"></a></dt>
 <dd><p>GP squared exponential kernel</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="kernel.kernel.poly_cubic_spline">
-<span class="sig-name descname"><span class="pre">poly_cubic_spline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kernel.html#kernel.poly_cubic_spline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kernel.kernel.poly_cubic_spline" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">poly_cubic_spline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kernel.kernel.poly_cubic_spline" title="Link to this definition"></a></dt>
 <dd><p>Polynomial Cubic spline kernel: Luca and Sagaut (2016)</p>
 </dd></dl>
 
@@ -136,12 +142,12 @@ K2: Kernel or Co-variance matrix of (discretitation, discretitation)</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="kernel.test">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kernel.</span></span><span class="sig-name descname"><span class="pre">test</span></span><a class="reference internal" href="_modules/kernel.html#test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kernel.test" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">kernel.</span></span><span class="sig-name descname"><span class="pre">test</span></span><a class="headerlink" href="#kernel.test" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class is reserved for performing test of this file only</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="kernel.test.kernel_matrix">
-<span class="sig-name descname"><span class="pre">kernel_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">discrestisation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kernel.html#test.kernel_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#kernel.test.kernel_matrix" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">kernel_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">discrestisation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#kernel.test.kernel_matrix" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
